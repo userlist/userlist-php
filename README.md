@@ -4,7 +4,11 @@ This library helps with integrating Userlist.io into PHP applications.
 
 ## Installation
 
-*To be defined.*
+This library can be installed via [Composer](https://getcomposer.org):
+
+```bash
+composer require userlistio/userlist
+```
 
 ## Configuration
 
@@ -14,7 +18,7 @@ Configuration values can be set when creating a new push client or via environme
 
 **Configuration via environment variables**
 
-```
+```bash
 USERLIST_PUSH_KEY=401e5c498be718c0a38b7da7f1ce5b409c56132a49246c435ee296e07bf2be39
 ```
 
