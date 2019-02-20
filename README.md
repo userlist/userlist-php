@@ -40,12 +40,12 @@ $userlist = new \Userlist\Push();
 
 ```php
 $userlist->user([
-  'identifier' => 'user-1',
-  'email' => 'user@example.com',
-  'properties' => [
-    'first_name' => 'Jane',
-    'last_name' => 'Doe'
-  ]
+    'identifier' => 'user-1',
+    'email' => 'user@example.com',
+    'properties' => [
+        'first_name' => 'Jane',
+        'last_name' => 'Doe'
+    ]
 ]);
 ```
 
@@ -54,11 +54,11 @@ $userlist->user([
 ```php
 $userlist = new \Userlist\Push();
 $userlist->event([
-  'name' => 'project_created',
-  'user' => 'user-1',
-  'properties' => [
-    'name' => 'Example Project',
-  ]
+    'name' => 'project_created',
+    'user' => 'user-1',
+    'properties' => [
+        'name' => 'Example Project',
+    ]
 ]);
 ```
 
