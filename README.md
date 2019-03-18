@@ -1,4 +1,4 @@
-# Userlist PHP
+# Userlist PHP [![Build Status](https://travis-ci.com/userlistio/userlist-php.svg?branch=master)](https://travis-ci.com/userlistio/userlist-php)
 
 This library helps with integrating Userlist.io into PHP applications.
 
