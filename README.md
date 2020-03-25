@@ -1,6 +1,6 @@
 # Userlist PHP [![Build Status](https://travis-ci.com/userlistio/userlist-php.svg?branch=master)](https://travis-ci.com/userlistio/userlist-php)
 
-This library helps with integrating Userlist.io into PHP applications.
+This library helps with integrating Userlist into PHP applications.
 
 ## Installation
 
@@ -12,7 +12,7 @@ composer require userlistio/userlist
 
 ## Configuration
 
-The only required configuration is the Push API key. You can get your Push API key via the [Push API settings](https://app.userlist.io/settings/push) in your Userlist.io account.
+The only required configuration is the Push API key. You can get your Push API key via the [Push API settings](https://app.userlist.com/settings/push) in your Userlist account.
 
 Configuration values can be set when creating a new push client or via environment variables. The environment takes precedence over values provided during the initialization process.
 

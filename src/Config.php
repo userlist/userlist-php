@@ -5,7 +5,7 @@ class Config
 {
     const DEFAULT_CONFIGURATION = [
         'push_key' => null,
-        'push_endpoint' => 'https://push.userlist.io/',
+        'push_endpoint' => 'https://push.userlist.com/',
         'guzzle' => []
     ];
 

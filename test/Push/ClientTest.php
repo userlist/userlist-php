@@ -34,7 +34,7 @@ final class ClientTest extends TestCase
         $lastRequest = $this->mock->getLastRequest();
 
         $this->assertEquals('POST', $lastRequest->getMethod());
-        $this->assertEquals('https://push.userlist.io/users', (string) $lastRequest->getUri());
+        $this->assertEquals('https://push.userlist.com/users', (string) $lastRequest->getUri());
         $this->assertEquals('application/json', $lastRequest->getHeader('Accept')[0]);
         $this->assertEquals('application/json; charset=UTF-8', $lastRequest->getHeader('Content-Type')[0]);
         $this->assertEquals('Push some-push-key', $lastRequest->getHeader('Authorization')[0]);

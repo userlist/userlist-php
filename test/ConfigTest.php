@@ -47,7 +47,7 @@ final class ConfigTest extends TestCase
     public function testPushEndpointDefaultValue()
     {
         $config = new \Userlist\Config();
-        $this->assertEquals('https://push.userlist.io/', $config->get('push_endpoint'));
+        $this->assertEquals('https://push.userlist.com/', $config->get('push_endpoint'));
     }
 
     public function testPushEndpointFromEnvironment()
