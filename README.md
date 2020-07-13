@@ -7,7 +7,7 @@ This library helps with integrating Userlist into PHP applications.
 This library can be installed via [Composer](https://getcomposer.org):
 
 ```bash
-composer require userlistio/userlist
+composer require userlistio/userlist dev-master
 ```
 
 ## Configuration
