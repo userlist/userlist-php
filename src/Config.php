@@ -5,7 +5,9 @@ class Config
 {
     const DEFAULT_CONFIGURATION = [
         'push_key' => null,
+        'push_id' => null,
         'push_endpoint' => 'https://push.userlist.com/',
+        'token_lifetime' => 300,
         'guzzle' => []
     ];
 
