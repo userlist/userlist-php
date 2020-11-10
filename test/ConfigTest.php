@@ -5,7 +5,7 @@ use PHPUnit\Framework\TestCase;
 
 final class ConfigTest extends TestCase
 {
-    public function tearDown()
+    public function tearDown(): void
     {
         putenv("USERLIST_PUSH_KEY=");
         putenv("USERLIST_PUSH_ENDPOINT=");

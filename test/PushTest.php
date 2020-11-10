@@ -12,7 +12,7 @@ final class PushTest extends TestCase
     protected $push;
     protected $mock;
 
-    public function setUp()
+    public function setUp(): void
     {
         $this->mock = new MockHandler();
 

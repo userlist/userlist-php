@@ -12,7 +12,7 @@ final class ClientTest extends TestCase
     private $mock;
     private $client;
 
-    public function setUp()
+    public function setUp(): void
     {
         $this->mock = new MockHandler();
 

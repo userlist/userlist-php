@@ -3,7 +3,7 @@
     "description": "PHP wrapper for the Userlist API",
     "type": "library",
     "require-dev": {
-        "phpunit/phpunit": "^7.5"
+        "phpunit/phpunit": "^9.3"
     },
     "license": "MIT",
     "authors": [
