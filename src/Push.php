@@ -47,8 +47,8 @@ class Push
             throw new \InvalidArgumentException('Missing required parameter: name');
         }
 
-        if (!array_key_exists('user', $payload)) {
-            throw new \InvalidArgumentException('Missing required parameter: user');
+        if (!array_key_exists('user', $payload) && !array_key_exists('company', $payload)) {
+            throw new \InvalidArgumentException('Missing required parameter: user or company');
         }
 
         $this->client->post('/events', $payload);

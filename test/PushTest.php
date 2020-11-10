@@ -82,10 +82,10 @@ final class PushTest extends TestCase
         $this->push->event(['user' => 'identifier']);
     }
 
-    public function testEventMissingUser()
+    public function testEventMissingUserAndCompany()
     {
         $this->expectException(\InvalidArgumentException::class);
-        $this->expectExceptionMessage('Missing required parameter: user');
+        $this->expectExceptionMessage('Missing required parameter: user or company');
         $this->push->event(['name' => 'test_completed']);
     }
 
