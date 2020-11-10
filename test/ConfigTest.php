@@ -17,6 +17,12 @@ final class ConfigTest extends TestCase
         $this->assertEquals('value', $config->get('key'));
     }
 
+    public function testConfigFromNull()
+    {
+        $config = new \Userlist\Config(null);
+        $this->assertNull($config->get('push_key'));
+    }
+
     public function testConfigFromConfig()
     {
         $other = new \Userlist\Config(['key' => 'value']);
