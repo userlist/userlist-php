@@ -18,7 +18,7 @@ final class TokenTest extends TestCase
   public function testStaticGenerate()
   {
     $token = \Userlist\Token::generate('user-identifier', $this->config);
-    $this->assertMatchesRegularExpression('/[a-z0-9_-]+\.[a-z0-9_-]+\.[a-z0-9_-]+/i', $token);
+    $this->assertRegExp('/[a-z0-9_-]+\.[a-z0-9_-]+\.[a-z0-9_-]+/i', $token);
   }
 
   public function testMissingIdentifier() {
