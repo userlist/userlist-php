@@ -19,6 +19,10 @@ class Token
             throw new \InvalidArgumentException('Missing required identifier');
         }
 
+        if ($pushKey == null || $pushId == null ) {
+          return null;
+        }
+
         $now = time();
 
         $header = [

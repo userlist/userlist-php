@@ -26,4 +26,16 @@ final class TokenTest extends TestCase
     $this->expectExceptionMessage('Missing required identifier');
     $token = \Userlist\Token::generate(null, $this->config);
   }
+
+  public function testMissingPushId() {
+    $this->config->set('push_id', null);
+    $token = \Userlist\Token::generate('user-identifier', $this->config);
+    $this->assertNull($token);
+  }
+
+  public function testMissingPushKey() {
+    $this->config->set('push_key', null);
+    $token = \Userlist\Token::generate('user-identifier', $this->config);
+    $this->assertNull($token);
+  }
 }
