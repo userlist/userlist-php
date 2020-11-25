@@ -1,5 +1,5 @@
 {
-    "name": "userlistio/userlist",
+    "name": "userlist/userlist",
     "description": "PHP wrapper for the Userlist API",
     "type": "library",
     "require-dev": {

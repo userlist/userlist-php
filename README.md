@@ -1,4 +1,4 @@
-# Userlist PHP [![Build Status](https://travis-ci.com/userlistio/userlist-php.svg?branch=master)](https://travis-ci.com/userlistio/userlist-php)
+# Userlist PHP [![Build Status](https://travis-ci.com/userlist/userlist-php.svg?branch=master)](https://travis-ci.com/userlist/userlist-php)
 
 This library helps with integrating Userlist into PHP applications.
 
@@ -7,7 +7,7 @@ This library helps with integrating Userlist into PHP applications.
 This library can be installed via [Composer](https://getcomposer.org):
 
 ```bash
-composer require userlistio/userlist dev-master
+composer require userlist/userlist dev-master
 ```
 
 ## Configuration
@@ -64,7 +64,7 @@ $userlist->event([
 
 ## Contributing
 
-Bug reports and pull requests are welcome on GitHub at https://github.com/userlistio/userlist-php. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [Contributor Covenant](http://contributor-covenant.org) code of conduct.
+Bug reports and pull requests are welcome on GitHub at https://github.com/userlist/userlist-php. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [Contributor Covenant](http://contributor-covenant.org) code of conduct.
 
 ## License
 
@@ -72,7 +72,7 @@ The library is available as open source under the terms of the [MIT License](htt
 
 ## Code of Conduct
 
-Everyone interacting in the Userlist project’s codebases, issue trackers, chat rooms and mailing lists is expected to follow the [code of conduct](https://github.com/userlistio/userlist-php/blob/master/CODE_OF_CONDUCT.md).
+Everyone interacting in the Userlist project’s codebases, issue trackers, chat rooms and mailing lists is expected to follow the [code of conduct](https://github.com/userlist/userlist-php/blob/master/CODE_OF_CONDUCT.md).
 
 ## What is Userlist?
 
