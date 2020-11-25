@@ -20,5 +20,8 @@
         "psr-4": {
             "Userlist\\": "src/"
         }
+    },
+    "scripts": {
+        "test": "phpunit test"
     }
 }
