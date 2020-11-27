@@ -38,28 +38,73 @@ $userlist = new \Userlist\Push();
 
 ### Tracking Users
 
+#### Creating & updating Users
+
 ```php
-$userlist->user([
+$user = [
     'identifier' => 'user-1',
     'email' => 'user@example.com',
     'properties' => [
         'first_name' => 'Jane',
         'last_name' => 'Doe'
     ]
-]);
+];
+
+$userlist->users->push($user);
+
+$userlist->user($user); // Alias
+$userlist->users->create($user); // Alias
+```
+
+#### Deleting Users
+
+```php
+$userlist->users->delete('user-1');
+$userlist->users->delete($user);
+```
+
+### Tracking Companies
+
+#### Creating & updating Companies
+
+```php
+$company = [
+    'identifier' => 'company-1',
+    'name' => 'Example, Inc.',
+    'properties' => [
+        'industry' => 'Software Testing'
+    ]
+];
+
+$userlist->companies->push($company);
+
+$userlist->company($company); // Alias
+$userlist->companies->create($company); // Alias
+
+```
+
+#### Deleting Companies
+
+```php
+$userlist->companies->delete('company-1');
+$userlist->companies->delete([ 'identifier' => 'company-1' ]);
 ```
 
 ### Tracking Events
 
 ```php
-$userlist = new \Userlist\Push();
-$userlist->event([
+$event = [
     'name' => 'project_created',
     'user' => 'user-1',
     'properties' => [
         'name' => 'Example Project',
     ]
-]);
+];
+
+$userlist->events->push($event);
+
+$userlist->event($event); // Alias
+$userlist->events->create($event); // Alias
 ```
 
 ## Contributing
