@@ -1,7 +1,7 @@
 <?php
 namespace Userlist\Push;
 
-final class Client
+class Client
 {
     private $client;
     private $config;
