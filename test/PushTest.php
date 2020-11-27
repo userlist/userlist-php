@@ -26,20 +26,6 @@ final class PushTest extends TestCase
         $this->push = new \Userlist\Push($config);
     }
 
-    public function testUserMissingPayload()
-    {
-        $this->expectException(\InvalidArgumentException::class);
-        $this->expectExceptionMessage('Missing required payload');
-        $this->push->user(null);
-    }
-
-    public function testUserMissingIdentifier()
-    {
-        $this->expectException(\InvalidArgumentException::class);
-        $this->expectExceptionMessage('Missing required parameter: identifier');
-        $this->push->user(['email' => 'test@example.com']);
-    }
-
     public function testUserSuccessful()
     {
         $this->mock->append(new Response(202, ['Content-Length' => 0]));
@@ -47,46 +33,11 @@ final class PushTest extends TestCase
         $this->assertEquals('/users', $this->mock->getLastRequest()->getUri()->getPath());
     }
 
-    public function testCompanyMissingPayload()
-    {
-        $this->expectException(\InvalidArgumentException::class);
-        $this->expectExceptionMessage('Missing required payload');
-        $this->push->company(null);
-    }
-
-    public function testCompanyMissingIdentifier()
-    {
-        $this->expectException(\InvalidArgumentException::class);
-        $this->expectExceptionMessage('Missing required parameter: identifier');
-        $this->push->company(['name' => 'Evil Corp']);
-    }
-
     public function testCompanySuccessful()
     {
         $this->mock->append(new Response(202, ['Content-Length' => 0]));
         $this->push->company(['identifier' => 'some-identifier']);
         $this->assertEquals('/companies', $this->mock->getLastRequest()->getUri()->getPath());
-    }
-
-    public function testEventMissingPayload()
-    {
-        $this->expectException(\InvalidArgumentException::class);
-        $this->expectExceptionMessage('Missing required payload');
-        $this->push->event(null);
-    }
-
-    public function testEventMissingName()
-    {
-        $this->expectException(\InvalidArgumentException::class);
-        $this->expectExceptionMessage('Missing required parameter: name');
-        $this->push->event(['user' => 'identifier']);
-    }
-
-    public function testEventMissingUserAndCompany()
-    {
-        $this->expectException(\InvalidArgumentException::class);
-        $this->expectExceptionMessage('Missing required parameter: user or company');
-        $this->push->event(['name' => 'test_completed']);
     }
 
     public function testEventSuccessful()
