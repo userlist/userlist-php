@@ -1,56 +1,39 @@
 <?php
 namespace Userlist;
 
+use \Userlist\Push\Relation;
+use \Userlist\Push\User;
+use \Userlist\Push\Company;
+use \Userlist\Push\Event;
+
 class Push
 {
-    private $client;
+    public $users;
+    public $companies;
+    public $events;
 
     public function __construct($config = null)
     {
         $config = new Config($config);
-        $this->client = new Push\Client($config);
+        $client = new Push\Client($config);
+
+        $this->users = new Relation(User::class, $client);
+        $this->companies = new Relation(Company::class, $client);
+        $this->events = new Relation(Event::class, $client);
     }
 
     public function user($payload = [])
     {
-        if ($payload == null) {
-            throw new \InvalidArgumentException('Missing required payload');
-        }
-
-        if (!array_key_exists('identifier', $payload)) {
-            throw new \InvalidArgumentException('Missing required parameter: identifier');
-        }
-
-        $this->client->post('/users', $payload);
+        $this->users->push($payload);
     }
 
     public function company($payload = [])
     {
-        if ($payload == null) {
-            throw new \InvalidArgumentException('Missing required payload');
-        }
-
-        if (!array_key_exists('identifier', $payload)) {
-            throw new \InvalidArgumentException('Missing required parameter: identifier');
-        }
-
-        $this->client->post('/companies', $payload);
+        $this->companies->push($payload);
     }
 
     public function event($payload = [])
     {
-        if ($payload == null) {
-            throw new \InvalidArgumentException('Missing required payload');
-        }
-
-        if (!array_key_exists('name', $payload)) {
-            throw new \InvalidArgumentException('Missing required parameter: name');
-        }
-
-        if (!array_key_exists('user', $payload) && !array_key_exists('company', $payload)) {
-            throw new \InvalidArgumentException('Missing required parameter: user or company');
-        }
-
-        $this->client->post('/events', $payload);
+        $this->events->push($payload);
     }
 }

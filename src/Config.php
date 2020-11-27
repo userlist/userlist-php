@@ -16,11 +16,10 @@ class Config
     public function __construct($configFromConstructor = [])
     {
         if ($configFromConstructor == null) {
-          $configFromConstructor = [];
+            $configFromConstructor = [];
         }
 
-        if ($configFromConstructor instanceof self)
-        {
+        if ($configFromConstructor instanceof self) {
             $configFromConstructor = $configFromConstructor->config;
         }
 

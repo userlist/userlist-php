@@ -19,8 +19,8 @@ class Token
             throw new \InvalidArgumentException('Missing required identifier');
         }
 
-        if ($pushKey == null || $pushId == null ) {
-          return null;
+        if ($pushKey == null || $pushId == null) {
+            return null;
         }
 
         $now = time();
@@ -48,7 +48,6 @@ class Token
 
     public function __toString()
     {
-
         $encodedHeader = $this->base64($this->json($this->header));
         $encodedPayload = $this->base64($this->json($this->payload));
         $encodedHeaderAndPayload = "$encodedHeader.$encodedPayload";
@@ -58,15 +57,18 @@ class Token
         return "$encodedHeader.$encodedPayload.$encodedSignature";
     }
 
-    private function base64($string) {
+    private function base64($string)
+    {
         return rtrim(strtr(base64_encode($string), '+/', '-_'), '=');
     }
 
-    private function json($data) {
+    private function json($data)
+    {
         return json_encode($data);
     }
 
-    private function hmac256($data, $key) {
+    private function hmac256($data, $key)
+    {
         return hash_hmac('SHA256', $data, $key, true);
     }
 }
