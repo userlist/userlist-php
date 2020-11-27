@@ -30,7 +30,7 @@ final class RelationTest extends TestCase
         $this->client
             ->expects($this->once())
             ->method('post')
-            ->with('/users', ['identifier' => 'user-1']);
+            ->with('/users', new User(['identifier' => 'user-1']));
 
         $this->relation->push($this->payload);
     }
@@ -40,7 +40,7 @@ final class RelationTest extends TestCase
         $this->client
             ->expects($this->once())
             ->method('post')
-            ->with('/users', ['identifier' => 'user-1']);
+            ->with('/users', new User(['identifier' => 'user-1']));
 
         $this->relation->create($this->payload);
     }

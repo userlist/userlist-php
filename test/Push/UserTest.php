@@ -33,12 +33,12 @@ final class UserTest extends TestCase
     public function testInitializeWithString()
     {
         $user = new User('user-1');
-        $this->assertEquals($user->serialize(), ['identifier' => 'user-1']);
+        $this->assertEquals($user->jsonSerialize(), ['identifier' => 'user-1']);
     }
 
-    public function testSerialize()
+    public function testJsonSerialize()
     {
-        $this->assertEquals($this->user->serialize(), ['identifier' => 'user-1']);
+        $this->assertEquals($this->user->jsonSerialize(), ['identifier' => 'user-1']);
     }
 
     public function testUrl()

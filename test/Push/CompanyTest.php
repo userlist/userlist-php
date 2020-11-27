@@ -33,12 +33,12 @@ final class CompanyTest extends TestCase
     public function testInitializeWithString()
     {
         $company = new Company('company-1');
-        $this->assertEquals($company->serialize(), ['identifier' => 'company-1']);
+        $this->assertEquals($company->jsonSerialize(), ['identifier' => 'company-1']);
     }
 
-    public function testSerialize()
+    public function testJsonSerialize()
     {
-        $this->assertEquals($this->company->serialize(), ['identifier' => 'company-1']);
+        $this->assertEquals($this->company->jsonSerialize(), ['identifier' => 'company-1']);
     }
 
     public function testUrl()

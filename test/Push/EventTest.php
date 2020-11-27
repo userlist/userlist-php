@@ -38,9 +38,9 @@ final class EventTest extends TestCase
         new Event(['name' => 'test-event']);
     }
 
-    public function testSerialize()
+    public function testJsonSerialize()
     {
-        $this->assertEquals($this->event->serialize(), ['name' => 'test-event', 'user' => 'user-1', 'company' => 'company-1']);
+        $this->assertEquals($this->event->jsonSerialize(), ['name' => 'test-event', 'user' => 'user-1', 'company' => 'company-1']);
     }
 
     public function testUrl()

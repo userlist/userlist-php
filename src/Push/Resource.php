@@ -1,7 +1,9 @@
 <?php
 namespace Userlist\Push;
 
-class Resource
+use JsonSerializable;
+
+class Resource implements JsonSerializable
 {
     protected $payload;
 
@@ -18,7 +20,7 @@ class Resource
         return "$url/$identifier";
     }
 
-    public function serialize()
+    public function jsonSerialize()
     {
         return $this->payload;
     }

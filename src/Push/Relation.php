@@ -14,7 +14,7 @@ class Relation
     public function push($payload = [])
     {
         $resource = $this->build($payload);
-        $this->client->post($resource::$url, $resource->serialize());
+        $this->client->post($resource::$url, $resource);
     }
 
     public function create($payload = [])

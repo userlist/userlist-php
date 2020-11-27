@@ -22,7 +22,8 @@ class Event extends Resource
         parent::__construct($payload);
     }
 
-    public function url() {
+    public function url()
+    {
         return null;
     }
 }
