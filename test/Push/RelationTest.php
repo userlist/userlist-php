@@ -17,7 +17,7 @@ final class RelationTest extends TestCase
     {
         $this->client = $this->getMockBuilder(Client::class)
                             ->disableOriginalConstructor()
-                            ->setMethods(['post', 'delete'])
+                            ->setMethodsExcept([])
                             ->getMock();
 
         $this->relation = new Relation(User::class, $this->client);

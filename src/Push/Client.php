@@ -17,9 +17,24 @@ class Client
         $this->client = new \GuzzleHttp\Client($options);
     }
 
+    public function get($endpoint)
+    {
+        return $this->request('GET', $endpoint);
+    }
+
+    public function put($endpoint, $payload = [])
+    {
+        return $this->request('PUT', $endpoint, $payload);
+    }
+
     public function post($endpoint, $payload = [])
     {
-        $this->request('POST', $endpoint, $payload);
+        return $this->request('POST', $endpoint, $payload);
+    }
+
+    public function delete($endpoint)
+    {
+        return $this->request('DELETE', $endpoint);
     }
 
     private function request($method, $endpoint, $payload = [])
@@ -33,6 +48,6 @@ class Client
             ]
         ];
 
-        $this->client->request($method, $endpoint, $options);
+        return $this->client->request($method, $endpoint, $options);
     }
 }
