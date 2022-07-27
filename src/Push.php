@@ -4,6 +4,7 @@ namespace Userlist;
 use \Userlist\Push\Relation;
 use \Userlist\Push\User;
 use \Userlist\Push\Company;
+use \Userlist\Push\Relationship;
 use \Userlist\Push\Event;
 
 class Push
@@ -19,6 +20,7 @@ class Push
 
         $this->users = new Relation(User::class, $client);
         $this->companies = new Relation(Company::class, $client);
+        $this->relationships = new Relation(Relationship::class, $client);
         $this->events = new Relation(Event::class, $client);
     }
 
@@ -30,6 +32,11 @@ class Push
     public function company($payload = [])
     {
         $this->companies->push($payload);
+    }
+
+    public function relationship($payload = [])
+    {
+        $this->relationships->push($payload);
     }
 
     public function event($payload = [])

@@ -40,6 +40,13 @@ final class PushTest extends TestCase
         $this->assertEquals('/companies', $this->mock->getLastRequest()->getUri()->getPath());
     }
 
+    public function testRelationshipSuccessful()
+    {
+        $this->mock->append(new Response(202, ['Content-Length' => 0]));
+        $this->push->relationship(['user' => 'user-1', 'company' => 'company-1']);
+        $this->assertEquals('/relationships', $this->mock->getLastRequest()->getUri()->getPath());
+    }
+
     public function testEventSuccessful()
     {
         $this->mock->append(new Response(202, ['Content-Length' => 0]));
