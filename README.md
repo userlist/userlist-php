@@ -90,6 +90,72 @@ $userlist->companies->delete('company-1');
 $userlist->companies->delete([ 'identifier' => 'company-1' ]);
 ```
 
+### Tracking Relationships
+
+#### Creating & updating Relationships
+
+```php
+$relationship = [
+    'user' => 'user-1',
+    'company' => 'company-1',
+    'properties' => [
+        'role' => 'admin'
+    ]
+];
+
+$userlist->relationships->push($relationship);
+
+$userlist->relationship($relationship); // Alias
+$userlist->relationships->create($relationship); // Alias
+```
+
+This is equivalent to specifying the relationship on the user model.
+
+```php
+$user = [
+    'identifier' => 'user-1',
+    'relationships' => [
+        [
+            'company' => 'company-1',
+            'properties' => [
+                'role' => 'admin'
+            ]
+        ]
+    ],
+];
+
+$userlist->users->push($user);
+```
+
+It's also equivalent specifying the relationship on the company model.
+
+```php
+$company = [
+    'identifier' => 'company-1',
+    'relationships' => [
+        [
+            'user' => 'user-1',
+            'properties' => [
+                'role' => 'admin'
+            ]
+        ]
+    ],
+];
+
+$userlist->companies->push($company);
+```
+
+#### Deleting Relationships
+
+```php
+$relationship = [
+    'user' => 'user-1',
+    'company' => 'company-1'
+]
+
+$userlist->relationships->delete($relationship);
+```
+
 ### Tracking Events
 
 ```php
