@@ -73,7 +73,7 @@ final class ClientTest extends TestCase
     public function testSuccessfulDelete()
     {
         $this->mock->append(new Response(202, ['Content-Length' => 0]));
-        $this->client->delete('/users');
+        $this->client->delete('/users', ['identifier' => 'some-identifier']);
 
         $lastRequest = $this->mock->getLastRequest();
 
@@ -82,5 +82,6 @@ final class ClientTest extends TestCase
         $this->assertEquals('application/json', $lastRequest->getHeader('Accept')[0]);
         $this->assertEquals('application/json; charset=UTF-8', $lastRequest->getHeader('Content-Type')[0]);
         $this->assertEquals('Push some-push-key', $lastRequest->getHeader('Authorization')[0]);
+        $this->assertEquals('{"identifier":"some-identifier"}', (string) $lastRequest->getBody());
     }
 }

@@ -32,9 +32,9 @@ class Client
         return $this->request('POST', $endpoint, $payload);
     }
 
-    public function delete($endpoint)
+    public function delete($endpoint, $payload = [])
     {
-        return $this->request('DELETE', $endpoint);
+        return $this->request('DELETE', $endpoint, $payload);
     }
 
     private function request($method, $endpoint, $payload = [])

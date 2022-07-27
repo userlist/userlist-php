@@ -49,7 +49,7 @@ final class RelationTest extends TestCase
     {
         $this->client->expects($this->once())
             ->method('delete')
-            ->with('/users/user-1');
+            ->with('/users', new User(['identifier' => 'user-1']));
 
         $this->relation->delete($this->payload);
     }
@@ -58,7 +58,7 @@ final class RelationTest extends TestCase
     {
         $this->client->expects($this->once())
             ->method('delete')
-            ->with('/users/user-1');
+            ->with('/users', new User(['identifier' => 'user-1']));
 
         $this->relation->delete($this->payload['identifier']);
     }

@@ -25,7 +25,7 @@ class Relation
     public function delete($payload = [])
     {
         $resource = $this->build($payload);
-        $this->client->delete($resource->url());
+        $this->client->delete($resource::$url, $resource);
     }
 
     private function build($payload = [])
