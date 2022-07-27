@@ -15,10 +15,6 @@ class User extends Resource
             throw new \InvalidArgumentException('Missing required payload');
         }
 
-        if (!array_key_exists('identifier', $payload)) {
-            throw new \InvalidArgumentException('Missing required parameter: identifier');
-        }
-
         parent::__construct($payload);
     }
 }

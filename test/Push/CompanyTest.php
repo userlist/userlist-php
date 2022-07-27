@@ -22,14 +22,6 @@ final class CompanyTest extends TestCase
         new Company(null);
     }
 
-    public function testInitializeWithMissingIdentifier()
-    {
-        $this->expectException(\InvalidArgumentException::class);
-        $this->expectExceptionMessage('Missing required parameter: identifier');
-
-        new Company(['name' => 'Example, Inc.']);
-    }
-
     public function testInitializeWithString()
     {
         $company = new Company('company-1');

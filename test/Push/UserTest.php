@@ -22,14 +22,6 @@ final class UserTest extends TestCase
         new User(null);
     }
 
-    public function testInitializeWithMissingIdentifier()
-    {
-        $this->expectException(\InvalidArgumentException::class);
-        $this->expectExceptionMessage('Missing required parameter: identifier');
-
-        new User(['email' => 'test@example.com']);
-    }
-
     public function testInitializeWithString()
     {
         $user = new User('user-1');
