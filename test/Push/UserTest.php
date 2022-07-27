@@ -40,9 +40,4 @@ final class UserTest extends TestCase
     {
         $this->assertEquals($this->user->jsonSerialize(), ['identifier' => 'user-1']);
     }
-
-    public function testUrl()
-    {
-        $this->assertEquals($this->user->url(), '/users/user-1');
-    }
 }

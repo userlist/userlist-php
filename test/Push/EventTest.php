@@ -42,9 +42,4 @@ final class EventTest extends TestCase
     {
         $this->assertEquals($this->event->jsonSerialize(), ['name' => 'test-event', 'user' => 'user-1', 'company' => 'company-1']);
     }
-
-    public function testUrl()
-    {
-        $this->assertEquals($this->event->url(), null);
-    }
 }

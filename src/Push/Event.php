@@ -21,9 +21,4 @@ class Event extends Resource
 
         parent::__construct($payload);
     }
-
-    public function url()
-    {
-        return null;
-    }
 }

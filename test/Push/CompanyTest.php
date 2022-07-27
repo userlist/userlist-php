@@ -40,9 +40,4 @@ final class CompanyTest extends TestCase
     {
         $this->assertEquals($this->company->jsonSerialize(), ['identifier' => 'company-1']);
     }
-
-    public function testUrl()
-    {
-        $this->assertEquals($this->company->url(), '/companies/company-1');
-    }
 }

@@ -12,14 +12,6 @@ class Resource implements JsonSerializable
         $this->payload = $payload;
     }
 
-    public function url()
-    {
-        $url = static::$url;
-        $identifier = $this->payload['identifier'];
-
-        return "$url/$identifier";
-    }
-
     public function jsonSerialize()
     {
         return $this->payload;
