@@ -28,6 +28,11 @@ class Relation
         $this->client->delete($resource::$url, $resource);
     }
 
+    public function update($payload = [])
+    {
+        $this->push($payload);
+    }
+
     private function build($payload = [])
     {
         $resourceType = $this->resourceType;

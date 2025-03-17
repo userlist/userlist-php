@@ -62,4 +62,14 @@ final class RelationTest extends TestCase
 
         $this->relation->delete($this->payload['identifier']);
     }
+
+    public function testUpdate()
+    {
+        $this->client
+            ->expects($this->once())
+            ->method('post')
+            ->with('/users', new User(['identifier' => 'user-1']));
+
+        $this->relation->update($this->payload);
+    }
 }
