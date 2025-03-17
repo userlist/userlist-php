@@ -53,4 +53,11 @@ final class PushTest extends TestCase
         $this->push->event(['name' => 'some-event', 'user' => 'some-identifier']);
         $this->assertEquals('/events', $this->mock->getLastRequest()->getUri()->getPath());
     }
+
+    public function testMessageSuccessful()
+    {
+        $this->mock->append(new Response(202, ['Content-Length' => 0]));
+        $this->push->message(['user' => 'user-1', 'template' => 'welcome-email']);
+        $this->assertEquals('/messages', $this->mock->getLastRequest()->getUri()->getPath());
+    }
 }
