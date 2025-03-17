@@ -4,6 +4,7 @@ namespace Userlist\Push;
 class Relation
 {
     private $resourceType;
+    private $client;
 
     public function __construct($resource, $client)
     {

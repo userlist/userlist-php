@@ -12,6 +12,7 @@ class Resource implements JsonSerializable
         $this->payload = $payload;
     }
 
+    #[\ReturnTypeWillChange]
     public function jsonSerialize()
     {
         return $this->payload;

@@ -6,6 +6,7 @@ class Token
     private $config;
     private $payload;
     private $header;
+    private $key;
 
     public static function generate($identifier, $config = [])
     {

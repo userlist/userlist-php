@@ -12,6 +12,7 @@ class Push
     public $users;
     public $companies;
     public $events;
+    public $relationships;
 
     public function __construct($config = null)
     {
