@@ -173,6 +173,24 @@ $userlist->event($event); // Alias
 $userlist->events->create($event); // Alias
 ```
 
+### Sending Transactional Messages
+
+```php
+$message = [
+    'user' => 'user-1',
+    'template' => 'welcome-email',
+    'properties' => [
+        'account_name' => 'Example, Inc.',
+        'billing_plan' => 'Pro',
+    ]
+];
+
+$userlist->messages->push($message);
+
+$userlist->message($message); // Alias
+$userlist->messages->create($message); // Alias
+```
+
 ## Contributing
 
 Bug reports and pull requests are welcome on GitHub at https://github.com/userlist/userlist-php. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [Contributor Covenant](http://contributor-covenant.org) code of conduct.
